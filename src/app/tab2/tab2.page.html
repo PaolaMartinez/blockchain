@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+     Criptocoins Bank YachayTech
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+<ion-button *ngIf = "!registrado" expand="block" (click)= "register()">Register</ion-button>
+<ion-button *ngIf = "registrado" expand="block" (click)= "register()">Logged</ion-button>
+<ion-button *ngIf = "registrado && clave" expand="block" color = "secondary" >Key = {{this.clave}}</ion-button>
+
+
+</ion-content>

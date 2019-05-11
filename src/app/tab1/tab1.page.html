@@ -1,41 +1,51 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab One
+      Cryptocoins Bank YachayTech
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
+      <ion-img style="width: 1100px; height: 500px;"  src="/assets/logo_y.png"></ion-img>
       <ion-card-header>
         <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
+        <ion-card-title>Blockchain</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+        <p>In this platform you can be part of a proof of work contest to be able to insert a new block in the blockchain.</p>
       </ion-card-content>
     </ion-card>
     <ion-list lines="none">
       <ion-list-header>
         <ion-label>Resources</ion-label>
       </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
+      <ion-item >  
         <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
+        <ion-label *ngIf = "showed"  color="secondary" (click)="infoButtonClick()"> Information </ion-label>
+        <ion-label *ngIf = "!showed"  (click)="infoButtonClick()"> Information </ion-label>
       </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
+      <ion-card  *ngIf = "showed">
+        <ion-card-content>
+          A blockchain is a growing list of records, called blocks, which are linked using cryptography. 
+          Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.
+          It is an open and distributed ledger that record transactions between two parties efficiently, and 
+          in a verifiable and permanent way. In the blockchain, a proof of work is used to confirm transactions
+          and to produce new blocks in the chain. A proof of work is a piece of data which satisfies certain requirements, 
+          that is difficult to produce, but easy for others to verify.
+        </ion-card-content>
+      </ion-card>
+      
+      <ion-item>
+        <ion-icon slot="start" color="medium" name="logo-bitcoin"></ion-icon>
+        <ion-label *ngIf = "showed2"  color="secondary" (click)="infoButtonClick2()"> Prizes </ion-label>
+        <ion-label *ngIf = "!showed2"  (click)="infoButtonClick2()"> Prizes </ion-label>
       </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
+      <ion-list  *ngIf = "showed2" >
+          <ion-item>
+            <ion-label>The winner will have one extra point to the final exam!! Good luck :)</ion-label>
+          </ion-item>
+      </ion-list>
     </ion-list>
 </ion-content>

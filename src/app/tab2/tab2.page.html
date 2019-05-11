@@ -10,7 +10,7 @@
 
 <ion-button *ngIf = "!registrado" expand="block" (click)= "register()">Register</ion-button>
 <ion-button *ngIf = "registrado" expand="block" (click)= "register()">Logged</ion-button>
-<ion-button *ngIf = "registrado && clave" expand="block" color = "secondary" >Key = {{this.clave}}</ion-button>
+<ion-button *ngIf = "registrado " expand="block" color = "secondary" >Key = {{this.Hash}}</ion-button>
 
 
 </ion-content>
